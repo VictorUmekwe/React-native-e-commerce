@@ -5,6 +5,7 @@ import routes from "./routes/index.js";
 import { limiter } from "./utils/rateLimit.js";
 import type { NextFunction, Request, Response } from "express";
 import { errorHandler } from "./middleware/errorMiddleware.js";
+import { clerkMiddleware } from "@clerk/express";
 
 const app = express();
 
@@ -20,6 +21,9 @@ app.use(limiter);
 // Request body parsing
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
+
+//clerk middleware
+app.use(clerkMiddleware());
 
 //root route
 app.get('/', (req: Request, res: Response) => {
