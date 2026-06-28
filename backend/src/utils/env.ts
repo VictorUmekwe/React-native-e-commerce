@@ -8,7 +8,8 @@ export const getEnv = () => {
         CLERK_PUBLISHABLE_KEY: process.env.CLERK_PUBLISHABLE_KEY!,
         CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY!,
         CLOUDINARY_SECRET: process.env.CLOUDINARY_SECRET!,
-        CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME!
+        CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME!,
+        INNGEST_SIGNING_KEY: process.env.INNGEST_SIGNING_KEY!
     }
     return env
 }
